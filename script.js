@@ -1,9 +1,13 @@
-document.addEventListener('DOMContentLoaded', function () {
-    let reviews = document.querySelectorAll('.review');
+document.addEventListener("DOMContentLoaded", function() {
+    const testimonials = document.querySelectorAll(".testimonial");
     let index = 0;
-    setInterval(() => {
-        reviews.forEach(r => r.style.display = 'none');
-        reviews[index].style.display = 'block';
-        index = (index + 1) % reviews.length;
-    }, 3000);
+
+    function showTestimonial() {
+        testimonials.forEach(t => t.style.display = "none");
+        testimonials[index].style.display = "block";
+        index = (index + 1) % testimonials.length;
+    }
+
+    showTestimonial();
+    setInterval(showTestimonial, 3000);
 });

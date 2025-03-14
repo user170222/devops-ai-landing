@@ -3,61 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps AI Assistant</title>
+    <title>DevOps AI – Умный помощник для DevOps</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>DevOps AI Assistant</h1>
-        <p>Готовься к собеседованиям и решай проблемы с пайплайнами и Kubernetes</p>
-        <a href="#start" class="cta-button">Попробовать бесплатно</a>
+        <h1>DevOps AI – Помощник DevOps-инженера</h1>
+        <p>Готовься к собеседованиям, решай проблемы с CI/CD и Kubernetes с помощью AI</p>
+        <a href="#signup" class="cta-button">Попробовать бесплатно</a>
     </header>
-    
+
     <section id="features">
         <h2>Возможности</h2>
         <div class="feature">
-            <h3>Подготовка к собеседованиям</h3>
-            <p>Ответы на популярные вопросы DevOps-интервью.</p>
+            <h3>🔥 Подготовка к собеседованиям</h3>
+            <p>AI поможет с разбором вопросов, тестовыми заданиями и техническими кейсами.</p>
         </div>
         <div class="feature">
-            <h3>Анализ пайплайнов</h3>
-            <p>Идентификация проблем в CI/CD и их исправление.</p>
+            <h3>🚀 Решение проблем с пайплайнами</h3>
+            <p>Автоматический анализ логов, рекомендации по фиксам, разбор ошибок.</p>
         </div>
         <div class="feature">
-            <h3>Оптимизация Kubernetes</h3>
-            <p>Автоматические советы по настройке кластеров.</p>
+            <h3>📦 Оптимизация Kubernetes</h3>
+            <p>Разбор конфигураций, аудит кластеров, поиск bottleneck'ов.</p>
         </div>
     </section>
-    
+
     <section id="team">
-        <h2>Наша команда DevOps</h2>
-        <p>Профессиональные инженеры DevOps работают над улучшением сервиса.</p>
+        <h2>Наша команда</h2>
+        <div class="team-carousel">
+            <div class="member">
+                <img src="team1.jpg" alt="DevOps Lead">
+                <p><strong>Алексей</strong> – Senior DevOps</p>
+            </div>
+            <div class="member">
+                <img src="team2.jpg" alt="Cloud Architect">
+                <p><strong>Мария</strong> – Cloud Architect</p>
+            </div>
+            <div class="member">
+                <img src="team3.jpg" alt="SRE Engineer">
+                <p><strong>Иван</strong> – SRE Engineer</p>
+            </div>
+        </div>
     </section>
-    
-    <section id="reviews">
+
+    <section id="testimonials">
         <h2>Отзывы пользователей</h2>
         <div class="carousel">
-            <div class="review">"Этот сервис спас мне часы работы!" - Алексей</div>
-            <div class="review">"Идеальный помощник для DevOps!" - Марина</div>
-            <div class="review">"Больше никаких проблем с пайплайнами!" - Дмитрий</div>
+            <div class="testimonial">
+                <p>"DevOps AI помог мне пройти сложное собеседование в крупную компанию!"</p>
+                <span>— Сергей, DevOps Engineer</span>
+            </div>
+            <div class="testimonial">
+                <p>"Решил проблему с GitLab CI всего за 10 минут! Топ!"</p>
+                <span>— Анна, Senior DevOps</span>
+            </div>
+            <div class="testimonial">
+                <p>"Нашел баг в Kubernetes конфигурации, который искал неделю. Спасибо!"</p>
+                <span>— Дмитрий, SRE</span>
+            </div>
         </div>
     </section>
-    
+
+    <section id="signup">
+        <h2>Попробуй DevOps AI бесплатно</h2>
+        <p>Получите доступ к умному помощнику прямо сейчас.</p>
+        <form action="https://your-backend.com/signup" method="POST">
+            <input type="email" name="email" placeholder="Введите ваш email" required>
+            <button type="submit">Получить доступ</button>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2025 DevOps AI Assistant. Все права защищены.</p>
+        <p>&copy; 2025 DevOps AI. Все права защищены.</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let reviews = document.querySelectorAll('.review');
-            let index = 0;
-            setInterval(() => {
-                reviews.forEach(r => r.style.display = 'none');
-                reviews[index].style.display = 'block';
-                index = (index + 1) % reviews.length;
-            }, 3000);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
