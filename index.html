@@ -3,24 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps AI Landing</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DevOps AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>DevOps AI</h1>
-        <p>Подготовка к собеседованиям и автоматизация DevOps процессов</p>
+        <h1>DevOps AI Assistant</h1>
+        <p>Готовься к собеседованиям и решай проблемы с пайплайнами и Kubernetes</p>
+        <a href="#start" class="cta-button">Попробовать бесплатно</a>
     </header>
-    <section>
-        <h2>Готовься к собеседованию с ИИ</h2>
-        <p>Наш сервис помогает DevOps-инженерам проходить технические собеседования с помощью ИИ.</p>
+    
+    <section id="features">
+        <h2>Возможности</h2>
+        <div class="feature">
+            <h3>Подготовка к собеседованиям</h3>
+            <p>Ответы на популярные вопросы DevOps-интервью.</p>
+        </div>
+        <div class="feature">
+            <h3>Анализ пайплайнов</h3>
+            <p>Идентификация проблем в CI/CD и их исправление.</p>
+        </div>
+        <div class="feature">
+            <h3>Оптимизация Kubernetes</h3>
+            <p>Автоматические советы по настройке кластеров.</p>
+        </div>
     </section>
-    <section>
-        <h2>Автоматизация DevOps</h2>
-        <p>Решаем проблемы с пайплайнами, кодами и Kubernetes.</p>
+    
+    <section id="team">
+        <h2>Наша команда DevOps</h2>
+        <p>Профессиональные инженеры DevOps работают над улучшением сервиса.</p>
     </section>
+    
+    <section id="reviews">
+        <h2>Отзывы пользователей</h2>
+        <div class="carousel">
+            <div class="review">"Этот сервис спас мне часы работы!" - Алексей</div>
+            <div class="review">"Идеальный помощник для DevOps!" - Марина</div>
+            <div class="review">"Больше никаких проблем с пайплайнами!" - Дмитрий</div>
+        </div>
+    </section>
+    
     <footer>
-        <p>&copy; 2025 DevOps AI. Все права защищены.</p>
+        <p>&copy; 2025 DevOps AI Assistant. Все права защищены.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let reviews = document.querySelectorAll('.review');
+            let index = 0;
+            setInterval(() => {
+                reviews.forEach(r => r.style.display = 'none');
+                reviews[index].style.display = 'block';
+                index = (index + 1) % reviews.length;
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
