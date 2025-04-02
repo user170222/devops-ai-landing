@@ -3,81 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps AI – Умный помощник для DevOps</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>[Название Стартапа] - DevOps нового поколения с ИИ</title>
+    <style>
+        /* Базовые стили - можно вынести в отдельный CSS файл */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            padding: 60px 20px;
+            border-bottom: 1px solid #eee;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        h1 {
+            font-size: 2.8em; /* 44.8px */
+            text-align: center;
+        }
+        h2 {
+            font-size: 2em; /* 32px */
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff; /* Пример синего цвета */
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            margin: 10px 5px;
+        }
+        .cta-button:hover {
+            background-color: #0056b3; /* Более темный синий при наведении */
+        }
+        .cta-button-secondary {
+             background-color: transparent;
+             color: #007bff;
+             border: 2px solid #007bff;
+        }
+         .cta-button-secondary:hover {
+             background-color: #e7f3ff;
+             color: #0056b3;
+             border-color: #0056b3;
+         }
+
+        /* Стили для секций */
+        .hero {
+            background-color: #e9ecef; /* Светлый фон для Hero */
+             /* --- ДОБАВЬТЕ СЮДА фоновое изображение через background-image: url('...'); --- */
+             background-size: cover;
+             background-position: center;
+             color: #333; /* Убедитесь, что текст читаем на фоне */
+             text-align: center;
+             padding: 80px 20px;
+             border-bottom: none; /* Убираем границу под Hero */
+        }
+        .hero h1 {
+            color: #1a1a1a; /* Можно сделать темнее для контраста */
+        }
+        .hero p.subheadline {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 20px auto 30px auto;
+            color: #444;
+        }
+        .hero .cta-buttons {
+             margin-top: 30px;
+        }
+
+        .problem-section ul {
+            list-style: none; /* Убрать маркеры */
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+         .problem-section li {
+            margin-bottom: 15px;
+            font-weight: 500;
+             /* --- СЮДА МОЖНО ДОБАВИТЬ иконки перед текстом через ::before --- */
+        }
+
+        .how-it-works ol {
+            list-style-type: none; /* Убираем нумерацию по умолчанию */
+            counter-reset: step-counter;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .how-it-works li {
+            counter-increment: step-counter;
+            margin-bottom: 25px;
+            padding-left: 50px; /* Место для номера */
+            position: relative;
+        }
+        .how-it-works li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+        }
+        .how-it-works strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+            color: #333;
+        }
+         /* --- СЮДА МОЖНО ДОБАВИТЬ Визуализацию/Схему --- */
+         .visualization-placeholder {
+            text-align: center;
+            padding: 40px;
+            background-color: #f0f0f0;
+            border: 1px dashed #ccc;
+            margin-top: 30px;
+            color: #888;
+         }
+
+        .benefits-section ul {
+            list-style: none;
+            padding: 0;
+            display: grid; /* Используем гриды для колонок */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивные колонки */
+            gap: 30px; /* Пространство между блоками */
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .benefits-section li {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            /* --- СЮДА МОЖНО ДОБАВИТЬ иконки через ::before или <img> --- */
+        }
+         .benefits-section li strong {
+             font-size: 1.2em;
+             margin-bottom: 10px;
+             display: block;
+             color: #007bff;
+         }
+
+        .use-cases ul {
+            list-style: none;
+            padding: 0;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+         .use-cases li {
+            display: inline-block; /* Расположить в строку */
+            background-color: #e7f3ff;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-weight: 500;
+            color: #0056b3;
+         }
+
+        .social-proof {
+            background-color: #f0f8ff; /* Легкий голубой фон */
+        }
+         .social-proof .logos img {
+             max-height: 40px; /* Ограничить высоту лого */
+             margin: 10px 15px;
+             filter: grayscale(100%); /* Сделать ЧБ */
+             opacity: 0.7;
+             transition: filter 0.3s ease, opacity 0.3s ease;
+         }
+         .social-proof .logos img:hover {
+             filter: grayscale(0%);
+             opacity: 1;
+         }
+         .social-proof blockquote {
+             max-width: 650px;
+             margin: 30px auto;
+             padding: 20px;
+             border-left: 5px solid #007bff;
+             background-color: #fff;
+             font-style: italic;
+         }
+         .social-proof cite {
+             display: block;
+             margin-top: 10px;
+             font-weight: bold;
+             text-align: right;
+         }
+         .social-proof .placeholder {
+             text-align: center;
+             color: #888;
+             margin-top: 20px;
+         }
+
+
+        .final-cta {
+            background-color: #0056b3; /* Темно-синий фон */
+            color: white;
+            text-align: center;
+        }
+        .final-cta h2 {
+            color: white;
+        }
+        .final-cta .cta-button {
+            background-color: #ffc107; /* Желтая кнопка для контраста */
+            color: #333;
+        }
+        .final-cta .cta-button:hover {
+             background-color: #e0a800;
+        }
+         .final-cta p {
+             margin-top: 20px;
+             color: #eee;
+         }
+         .final-cta a {
+             color: #ffc107; /* Желтая ссылка */
+             text-decoration: underline;
+         }
+
+        /* --- ДОБАВЬТЕ СЮДА форму запроса демо --- */
+        .demo-form-placeholder {
+            max-width: 400px;
+            margin: 30px auto 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px dashed #ccc;
+            text-align: center;
+            color: #888;
+        }
+
+        footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #00aaff; /* Светло-синий для ссылок */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Медиа-запросы для адаптивности (простой пример) */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.6em; }
+            .container { padding: 15px; }
+            section { padding: 40px 15px; }
+            .hero { padding: 60px 15px; }
+            .benefits-section ul {
+                 grid-template-columns: 1fr; /* Один столбец на мобильных */
+            }
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>DevOps AI – Помощник DevOps-инженера</h1>
-        <p>Готовься к собеседованиям, решай проблемы с CI/CD и Kubernetes с помощью AI</p>
-        <a href="#signup" class="cta-button">Попробовать бесплатно</a>
+
+    <header class="hero">
+        <h1>DevOps нового поколения: Самообучающиеся ИИ-сети для безошибочного кода и быстрой доставки.</h1>
+        <p class="subheadline">[Название Стартапа] использует мощь коллективного искусственного интеллекта для автоматического обнаружения, исправления и оптимизации вашего кода и инфраструктуры. Сократите циклы разработки, повысьте надежность и опережайте конкурентов.</p>
+        <div class="cta-buttons">
+            <a href="#demo-form" class="cta-button">Запросить Демо</a>
+             <a href="#how-it-works" class="cta-button cta-button-secondary">Узнать больше о технологии</a>
+        </div>
     </header>
 
-    <section id="features">
-        <h2>Возможности</h2>
-        <div class="feature">
-            <h3>🔥 Подготовка к собеседованиям</h3>
-            <p>AI поможет с разбором вопросов, тестовыми заданиями и техническими кейсами.</p>
-        </div>
-        <div class="feature">
-            <h3>🚀 Решение проблем с пайплайнами</h3>
-            <p>Автоматический анализ логов, рекомендации по фиксам, разбор ошибок.</p>
-        </div>
-        <div class="feature">
-            <h3>📦 Оптимизация Kubernetes</h3>
-            <p>Разбор конфигураций, аудит кластеров, поиск bottleneck'ов.</p>
-        </div>
-    </section>
+    <main>
+        <section class="problem-section">
+            <div class="container">
+                <h2>Устали от рутины и ошибок в DevOps?</h2>
+                <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">Традиционные процессы DevOps часто сталкиваются с проблемами, которые тормозят развитие и увеличивают риски:</p>
+                <ul>
+                    <li>⏳ Медленные релизы: Долгие циклы тестирования и развертывания.</li>
+                    <li>🐛 Человеческий фактор: Ошибки в коде и конфигурациях приводят к сбоям.</li>
+                    <li>🕸️ Сложность инфраструктуры: Управление современными средами требует огромных усилий.</li>
+                    <li>💰 Высокие затраты: Неэффективное использование ресурсов и время на исправления.</li>
+                </ul>
+                <p style="text-align: center; margin-top: 30px; font-weight: bold;">Хватит бороться с симптомами. Пришло время для интеллектуального решения.</p>
+            </div>
+        </section>
 
-    <section id="team">
-        <h2>Наша команда</h2>
-        <div class="team-carousel">
-            <div class="member">
-                <img src="team1.jpg" alt="DevOps Lead">
-                <p><strong>Алексей</strong> – Senior DevOps</p>
-            </div>
-            <div class="member">
-                <img src="team2.jpg" alt="Cloud Architect">
-                <p><strong>Мария</strong> – Cloud Architect</p>
-            </div>
-            <div class="member">
-                <img src="team3.jpg" alt="SRE Engineer">
-                <p><strong>Иван</strong> – SRE Engineer</p>
-            </div>
-        </div>
-    </section>
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>Представляем [Название Стартапа]: Ваш ИИ-ассистент для DevOps</h2>
+                <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">Наша платформа — это экосистема из нескольких специализированных ИИ-сетей, работающих в синергии для непрерывного улучшения вашего DevOps цикла:</p>
+                <div class="visualization-placeholder">(Визуализация взаимодействия ИИ-сетей)</div>
 
-    <section id="testimonials">
-        <h2>Отзывы пользователей</h2>
-        <div class="carousel">
-            <div class="testimonial">
-                <p>"DevOps AI помог мне пройти сложное собеседование в крупную компанию!"</p>
-                <span>— Сергей, DevOps Engineer</span>
+                <ol>
+                    <li>
+                        <strong>Интеграция:</strong> Легко подключается к вашим Git-репозиториям, CI/CD пайплайнам (Jenkins, GitLab CI, GitHub Actions и др.) и облачным провайдерам (AWS, Azure, GCP).
+                    </li>
+                    <li>
+                        <strong>Коллективный Анализ:</strong> Множество ИИ-агентов непрерывно анализируют ваш код (Python, Java, Go, JS и т.д.), скрипты IaC (Terraform, Ansible), конфигурации Kubernetes и логи приложений.
+                    </li>
+                    <li>
+                        <strong>Взаимная Коррекция:</strong> Обнаружив проблему, одна ИИ-сеть предлагает решение. Другие сети проверяют, критикуют и улучшают это решение до оптимального варианта.
+                    </li>
+                    <li>
+                        <strong>Автоматическое Исправление и Оптимизация:</strong> Система предлагает готовые исправления (например, пул-реквесты) или автоматически применяет утвержденные изменения, оптимизируя код и инфраструктуру.
+                    </li>
+                     <li>
+                         <strong>Непрерывное Обучение:</strong> С каждым циклом наши ИИ-сети становятся умнее, адаптируясь к специфике ваших проектов и технологического стека.
+                     </li>
+                </ol>
+                 <p style="text-align: center; margin-top: 30px; font-weight: 500; font-size: 1.1em;">Результат? DevOps, который работает быстрее, надежнее и эффективнее.</p>
             </div>
-            <div class="testimonial">
-                <p>"Решил проблему с GitLab CI всего за 10 минут! Топ!"</p>
-                <span>— Анна, Senior DevOps</span>
-            </div>
-            <div class="testimonial">
-                <p>"Нашел баг в Kubernetes конфигурации, который искал неделю. Спасибо!"</p>
-                <span>— Дмитрий, SRE</span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="signup">
-        <h2>Попробуй DevOps AI бесплатно</h2>
-        <p>Получите доступ к умному помощнику прямо сейчас.</p>
-        <form action="https://your-backend.com/signup" method="POST">
-            <input type="email" name="email" placeholder="Введите ваш email" required>
-            <button type="submit">Получить доступ</button>
-        </form>
-    </section>
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Почему выбирают [Название Стартапа]?</h2>
+                <ul>
+                    <li>
+                        <strong>🚀 Ускорение CI/CD</strong>
+                        Сократите время от коммита до продакшена в разы благодаря автоматическому ревью и исправлению кода.
+                    </li>
+                    <li>
+                         <strong>🛡️ Повышение Надежности</strong>
+                        Минимизируйте количество багов и сбоев, доходящих до пользователей, за счет проактивного обнаружения и исправления.
+                    </li>
+                    <li>
+                         <strong>💡 Интеллектуальная Оптимизация</strong>
+                        Снижайте затраты на облако благодаря автоматической оптимизации конфигураций и ресурсов.
+                    </li>
+                    <li>
+                         <strong>🤖 Снижение Рутины</strong>
+                        Освободите инженеров от повторяющихся задач, позволив им сосредоточиться на инновациях.
+                    </li>
+                     <li>
+                         <strong>🔄 Адаптивность</strong>
+                        Система обучается на ваших данных и процессах, становясь все более эффективной со временем.
+                    </li>
+                     <li>
+                         <strong>🔒 Безопасность</strong>
+                        Автоматический поиск и предложение исправлений для известных уязвимостей в коде и зависимостях.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="use-cases">
+             <div class="container">
+                 <h2>Идеально подходит для:</h2>
+                 <ul>
+                     <li>Быстрорастущих технологических компаний</li>
+                     <li>Энтерпрайз-организаций</li>
+                     <li>Команд с высокими требованиями к качеству</li>
+                     <li>Финтеха и E-commerce</li>
+                     <li>Компаний, внедряющих культуру DevOps</li>
+                 </ul>
+             </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="container">
+                 <h2>Присоединяйтесь к революции в DevOps!</h2>
+                 <p style="text-align: center; max-width: 600px; margin: 0 auto 30px auto;">Станьте одним из первых, кто использует мощь коллективного ИИ для построения надежных и эффективных систем.</p>
+
+                 <div class="logos" style="text-align: center; margin-bottom: 30px;">
+                    <p class="placeholder">(Логотипы первых клиентов или партнеров)</p>
+                     </div>
+
+                 <blockquote>
+                     "С [Название Стартапа] мы смогли сократить количество инцидентов в продакшене на 40% и ускорить наши релизы на 60%."
+                     <cite>— Имя Фамилия, Должность, Компания</cite>
+                 </blockquote>
+                 </div>
+        </section>
+
+        <section id="demo-form" class="final-cta">
+            <div class="container">
+                <h2>Готовы увидеть будущее DevOps в действии?</h2>
+                <p>Узнайте, как [Название Стартапа] может трансформировать ваши процессы разработки и эксплуатации. Запросите персонализированное демо сегодня!</p>
+
+                <div class="demo-form-placeholder">
+                     (Здесь будет форма для запроса демо: Имя, Email, Компания)
+                </div>
+
+                 <a href="#demo-form" class="cta-button">Запросить бесплатное Демо</a>
+
+                <p>Или <a href="mailto:sales@yourstartupname.com">свяжитесь с нами</a> для получения дополнительной информации.</p> </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 DevOps AI. Все права защищены.</p>
+        <div class="container">
+             <p>© 2025 [Название Стартапа]. Все права защищены.</p>
+            <p>
+                <a href="/privacy-policy">Политика конфиденциальности</a> |
+                <a href="/terms-of-service">Условия использования</a> |
+                <a href="/contact">Контакты</a>
+            </p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
